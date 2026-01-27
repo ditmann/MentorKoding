@@ -3,27 +3,20 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) {
 
-    Gjoremaal firstInList = new Gjoremaal(false,"gå med søppel", 4);
-    Gjoremaal first1InList = new Gjoremaal(false,"gå med søppel", 5);
-    Gjoremaal firs2tInList = new Gjoremaal(false,"gå med søppel", 6);
-    Gjoremaal first3InList = new Gjoremaal(false,"gå med søppel", 7);
+    Task item1 = new Task(false,"Gå ut med søpla", 4);
+    Task item2 = new Task(false,"Be Mats om å prøve før han gir opp", 5);
+    Task item3 = new Task(false,"Si at Mats er gammel", 6);
+    Task item4 = new Task(false,"Få Håvard til å si \"Hmm?\"", 7);
 
+    ArrayList<Task> huskeliste = new ArrayList<>();
 
-    System.out.println(firstInList.toString());
+    huskeliste.add(item1);
+    huskeliste.add(item2);
+    huskeliste.add(item3);
+    huskeliste.add(item4);
 
-
-    ArrayList<Gjoremaal> huskeliste = new ArrayList<>();
-
-    huskeliste.add(firstInList);
-    huskeliste.add(first1InList);
-    huskeliste.add(firs2tInList);
-    huskeliste.add(first3InList);
-
-
-    for (Gjoremaal item: huskeliste){
+    for (Task item: huskeliste){
         System.out.println(item);
     }
-
-
     }
 }
