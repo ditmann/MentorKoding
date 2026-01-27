@@ -16,4 +16,28 @@ public class Gjoremaal {
     public String toString() {
         return "Gjoremaal{" + "status=" + status + ", goal='" + goal + '\'' + ", points=" + points + '}';
     }
+
+    public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
+    }
+
+    public String getGoal() {
+        return goal;
+    }
+
+    public void setGoal(String goal) {
+        this.goal = goal;
+    }
+
+    public int getPoints() {
+        return points;
+    }
+
+    public void setPoints(int points) {
+        this.points = points;
+    }
 }
