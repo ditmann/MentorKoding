@@ -20,25 +20,26 @@ public class Gjoremaal {
     }
 
     public boolean getStatus() {
-        return getStatus();
+        return status;
     }
+
     public void setStatus(boolean status) {
         this.status = status;
     }
 
     public String getGoal() {
-        return getGoal();
+        return goal;
     }
+
     public void setGoal(String goal) {
         this.goal = goal;
     }
 
     public int getPoints() {
-        return getPoints();
+        return points;
     }
+
     public void setPoints(int points) {
         this.points = points;
     }
-
-
 }
