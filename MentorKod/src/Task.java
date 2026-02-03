@@ -2,34 +2,29 @@
 public class Task {
 
     private boolean taskDone;
-    private String goal;
+    private String goalDescription;
     private int points;
 
-    public Task(boolean taskDone, String goal, int points){
-        this.taskDone = taskDone;
-        this.goal = goal;
+    public Task(String goalDescription, int points){
+        taskDone = false;
+        this.goalDescription = goalDescription;
         this.points = points;
     }
 
-    @Override
-    public String toString() {
-        return "Gjoremaal{" + "status=" + taskDone + ", goal='" + goal + '\'' + ", points=" + points + '}';
-    }
-
-    public boolean isTaskDone() {
+    public boolean getTaskDone() {
         return taskDone;
     }
 
-    public void setTaskDone(boolean taskDone) {
-        this.taskDone = taskDone;
+    public void setTaskDone() {
+        taskDone = true;
     }
 
-    public String getGoal() {
-        return goal;
+    public String getGoalDescription() {
+        return goalDescription;
     }
 
-    public void setGoal(String goal) {
-        this.goal = goal;
+    public void setGoalDescription(String goalDescription) {
+        this.goalDescription = goalDescription;
     }
 
     public int getPoints() {
@@ -38,5 +33,10 @@ public class Task {
 
     public void setPoints(int points) {
         this.points = points;
+    }
+
+    @Override
+    public String toString() {
+        return "Task{" + "status=" + taskDone + ", goal='" + goalDescription + '\'' + ", points=" + points + '}';
     }
 }

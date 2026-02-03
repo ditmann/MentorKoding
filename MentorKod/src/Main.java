@@ -3,10 +3,10 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) {
 
-    Task item1 = new Task(false,"Gå ut med søpla", 4);
-    Task item2 = new Task(false,"Be Mats om å prøve før han gir opp", 5);
-    Task item3 = new Task(false,"Si at Mats er gammel", 6);
-    Task item4 = new Task(false,"Få Håvard til å si \"Hmm?\"", 7);
+    Task item1 = new Task("Gå ut med søpla", 4);
+    Task item2 = new Task("Be Mats om å prøve før han gir opp", 5);
+    Task item3 = new Task("Si at Mats er gammel", 6);
+    Task item4 = new Task("Få Håvard til å si \"Hmm?\"", 7);
 
     ArrayList<Task> huskeliste = new ArrayList<>();
 
