@@ -37,8 +37,7 @@ public class Server {
             User user = userDAO.checkLogin((String) body.get("username"), (String) body.get("password"));
 
             if (user != null) {
-                send(req, Map.of("success", true, "name", user.getName(), "username", user.getUsername()));
-            } else {
+                send(req, Map.of("success", true, "name", user.getName(), "username", user.getUsername(), "total_points", user.getPointTotal()));            } else {
                 send(req, Map.of("success", false));
             }
         } catch (Exception e) {

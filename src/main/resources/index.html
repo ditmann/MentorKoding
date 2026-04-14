@@ -628,7 +628,7 @@
                 document.querySelector('.layout').style.gridTemplateColumns = '1fr';
 
                 // load tasks directly, no selectUser needed
-                currentUser = { username: data.username, name: data.name, total_points: 0 };
+                currentUser = { username: data.username, name: data.name, total_points: data.total_points };
                 const taskRes = await fetch(`${API}/tasks/${data.username}`);
                 const tasks = await taskRes.json();
                 renderUserView(tasks);

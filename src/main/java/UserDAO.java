@@ -4,7 +4,25 @@ import java.util.ArrayList;
 public class UserDAO {
 
     public User checkLogin(String username, String password) throws Exception {
-        return query("SELECT * FROM User WHERE username = ? AND password = ?", username, password);
+        User user = query("SELECT * FROM User WHERE username = ? AND password = ?", username, password);
+
+        if (user != null) {
+            // load tasks and recalculate points on login
+            for (Task t : new TaskDAO().getTasksForUser(username)) {
+                user.addTask(t);
+            }
+            user.calculatePointTotal();
+
+            // save updated points to db
+            PreparedStatement stmt = Database.getConnection().prepareStatement(
+                    "UPDATE User SET total_points = ? WHERE username = ?"
+            );
+            stmt.setInt(1, user.getPointTotal());
+            stmt.setString(2, username);
+            stmt.executeUpdate();
+        }
+
+        return user;
     }
 
     public User getUser(String username) throws Exception {
@@ -63,4 +81,6 @@ public class UserDAO {
         stmt.setString(2, username);
         stmt.executeUpdate();
     }
+
+
 }
