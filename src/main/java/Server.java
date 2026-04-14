@@ -120,7 +120,7 @@ public class Server {
         send(req, Map.of("success", true));
     }
 
-    // serves index.html when you go to localhost:3001/index.html
+    // serves index.html when you go to localhost:3001
     static void handleStatic(HttpExchange req) throws IOException {
         try {
             String[] paths = {
