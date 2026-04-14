@@ -23,11 +23,11 @@ public class Server {
         server.createContext("/api/login", Server::handleLogin);
         server.createContext("/api/users", Server::handleUsers);
         server.createContext("/api/tasks", Server::handleTasks);
-        server.createContext("/index.html", Server::handleStatic);
+        server.createContext("/", Server::handleStatic);
         server.setExecutor(Executors.newFixedThreadPool(4));
         server.start();
 
-        System.out.println("running on http://localhost:3001/index.html");
+        System.out.println("running on http://localhost:3001");
     }
 
     static void handleLogin(HttpExchange req) throws IOException {
