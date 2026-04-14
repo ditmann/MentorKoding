@@ -27,7 +27,7 @@ public class Server {
         server.setExecutor(Executors.newFixedThreadPool(4));
         server.start();
 
-        System.out.println("running on http://localhost:3001");
+        System.out.println("running on http://localhost:3001/index.html");
     }
 
     static void handleLogin(HttpExchange req) throws IOException {
